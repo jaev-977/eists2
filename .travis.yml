@@ -5,4 +5,4 @@ cache: pip
 install:
   - pip install -r requirements.txt
 script:
-  - python -m unittest -v test1
+  - python -m unittest -v tallersemana2
