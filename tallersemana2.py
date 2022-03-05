@@ -1,7 +1,12 @@
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+from time import sleep
 import unittest
 from warnings import filterwarnings
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.keys import Keys
 filterwarnings("ignore")
 
 class TestSe(unittest.TestCase):
@@ -11,15 +16,13 @@ class TestSe(unittest.TestCase):
 
 	def test_load(self):
 		browser = self.browser
-        browser.get("https://demo.guru99.com/test/login.html")
-        self.driver.find_element(By.ID, "email").send_keys("1")
-        self.driver.find_element(By.ID, "passwd").send_keys("1")
-        submitButton = browser.find_element_by_css_selector("#SubmitLogin").click()
-        sleep(2)
-        tbody= browser.find_element_by_css_selector("h3"
-        self.driver.find_element(By.ID, "passwd").send_keys("1")
-        self.assertIn('Successfully Logged', tbody)
-				
+		browser.get("https://demo.guru99.com/test/login.html")
+		self.browser.find_element(By.ID, "email").send_keys("1")
+		self.browser.find_element(By.ID, "passwd").send_keys("1")
+		submitButton = browser.find_element_by_css_selector("#SubmitLogin").click()
+		sleep(2)
+		tbody= browser.find_element_by_css_selector("h3").text
+		self.assertIn('Successfully Logged', tbody)
 		
 
 	def tearDown(self):
@@ -28,11 +31,4 @@ class TestSe(unittest.TestCase):
 
 if __name__ == '__main__':
 	main()
-		
-		
-		
-        
-        
-        
-      
-		
+	
