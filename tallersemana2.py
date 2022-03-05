@@ -12,7 +12,14 @@ filterwarnings("ignore")
 class TestSe(unittest.TestCase):
 
 	def setUp(self):
-		self.browser = webdriver.Chrome(executable_path="./drivers/chromedriver")
+		self.browser = webdriver.ChromeOptions()
+		self.browser.binary_location = '/usr/bin/chromium-browser'
+		#All the arguments added for chromium to work on selenium
+		self.browser.add_argument("--no-sandbox") #This make Chromium reachable
+		self.browser.add_argument("--no-default-browser-check") #Overrides default choices
+		self.browser.add_argument("--no-first-run")
+		self.browser.add_argument("--disable-default-apps") 
+		driver = webdriver.Chrome('/home/travis/virtualenv/python2.7.9   /chromedriver',chrome_options=self.browser)
 
 	def test_load(self):
 		browser = self.browser
