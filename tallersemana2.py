@@ -19,7 +19,6 @@ class TestSe(unittest.TestCase):
 		self.browser.add_argument("--no-default-browser-check") #Overrides default choices
 		self.browser.add_argument("--no-first-run")
 		self.browser.add_argument("--disable-default-apps") 
-		driver = webdriver.Chrome('/home/travis/virtualenv/python3.8.12   /chromedriver',chrome_options=self.browser)
 
 	def test_load(self):
 		browser = self.browser
