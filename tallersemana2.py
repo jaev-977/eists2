@@ -13,7 +13,8 @@ filterwarnings("ignore")
 class TestSe(unittest.TestCase):
 
 	def setUp(self):
-		self.browser = Chrome()
+		 
+		self.browser = webdriver.Firefox()
 		 
 
 	def test_load(self):
