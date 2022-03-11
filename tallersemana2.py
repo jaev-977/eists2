@@ -7,18 +7,14 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
+from selenium_chrome import Chrome
 filterwarnings("ignore")
 
 class TestSe(unittest.TestCase):
 
 	def setUp(self):
-		self.browser = webdriver.ChromeOptions()
-		self.browser.binary_location = '/usr/bin/chromium-browser'
-		#All the arguments added for chromium to work on selenium
-		self.browser.add_argument("--no-sandbox") #This make Chromium reachable
-		self.browser.add_argument("--no-default-browser-check") #Overrides default choices
-		self.browser.add_argument("--no-first-run")
-		self.browser.add_argument("--disable-default-apps") 
+		self.browser = Chrome()
+		 
 
 	def test_load(self):
 		browser = self.browser
