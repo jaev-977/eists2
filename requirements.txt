@@ -1,2 +1,3 @@
 selenium
 rand-string
+selenium-chrome
