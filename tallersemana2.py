@@ -17,7 +17,7 @@ class TestSe(unittest.TestCase):
 
 	def test_load(self):
 		self.browser.headless = True
-		brow = uc.Chrome()
+		brow = uc.Chrome(self.browser=self.browser)
 		brow.get("https://demo.guru99.com/test/login.html")
 		self.browser.find_element(By.ID, "email").send_keys("1")
 		self.browser.find_element(By.ID, "passwd").send_keys("1")
