@@ -4,6 +4,7 @@ from selenium.webdriver.common.keys import Keys
 from time import sleep
 import unittest
 from warnings import filterwarnings
+import undetected_chromedriver as uc
 filterwarnings("ignore")
 
 class TestSe(unittest.TestCase):
