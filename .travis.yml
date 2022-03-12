@@ -8,4 +8,4 @@ install:
   - pip install -r requirements.txt
 
 script: 
-  - python -m unittest -v tallerSemana2
+  - python -m unittest -v tallersemana2.py
