@@ -1,20 +1,16 @@
+from pip import main
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 from time import sleep
 import unittest
 from warnings import filterwarnings
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.common.keys import Keys
-from selenium_chrome import Chrome
 filterwarnings("ignore")
 
 class TestSe(unittest.TestCase):
 
 	def setUp(self):
 		 
-		self.browser = webdriver.Firefox()
+		self.browser = webdriver.Chrome(executable_path="./drivers/chromedriver.exe")
 		 
 
 	def test_load(self):
