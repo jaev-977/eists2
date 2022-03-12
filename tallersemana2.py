@@ -10,11 +10,13 @@ class TestSe(unittest.TestCase):
 
 	def setUp(self):
 		 
-		self.browser = webdriver.Chrome(executable_path="/home/travis/virtualenv/python3.7.1/lib/python3.7/site-packages/selenium/webdriver/chromium/webdriver.py")
+		self.browser = webdriver.ChromeOptions()
+		self.browse.headless = True
 		 
 
 	def test_load(self):
-		browser = self.browser
+		
+		browser = uc.Chrome(self.browser=self.browser)
 		browser.get("https://demo.guru99.com/test/login.html")
 		self.browser.find_element(By.ID, "email").send_keys("1")
 		self.browser.find_element(By.ID, "passwd").send_keys("1")
