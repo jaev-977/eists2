@@ -1,24 +1,11 @@
-sudo: required
+lenguage: python
+python:
+  - "3.7"
+cache: pip
 addons:
   chrome: stable
-  apt:
-    packages:
-      - chromium-chromedriver
-
-language: python
-python:
-  - "3.8"
-cache: pip
-install:
+install: 
   - pip install -r requirements.txt
 
-before_script:
-  # include ChromeDriver in PATH
-  - ln --symbolic /usr/lib/chromium-browser/chromedriver "${HOME}/bin/chromedriver"
-  # start Chrome and listen on localhost
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
-script:
-  - # start your web application and listen on `localhost`
-  - # google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
-  - python -m unittest -v tallersemana2
-  
+script: 
+  - python -m unittest discover -v
