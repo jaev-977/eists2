@@ -10,7 +10,7 @@ class TestSe(unittest.TestCase):
 
 	def setUp(self):
 		 
-		self.browser = webdriver.Chrome(executable_path="/usr/bin/chromium-browser")
+		self.browser = webdriver.Chrome(executable_path="/home/travis/virtualenv/python3.7.1/lib/python3.7/site-packages/selenium/webdriver/chromium/chromedriver")
 		 
 
 	def test_load(self):
